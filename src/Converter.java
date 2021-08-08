@@ -29,7 +29,7 @@ public class Converter {
                 value = value.substring(numerals[i].length());
             }
         }
-        if(result <= 0 | result > 100) {
+        if(result <= 0 || result > 100) {
             throw new Exception("Вы ввели неверное римское число");
         }
         return result;
