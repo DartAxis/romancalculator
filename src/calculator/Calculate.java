@@ -6,7 +6,7 @@ public class Calculate {
     private Calculate() {
     }
 
-    public static void calc(String line) throws Exception {
+    public static void calc(String line) {
         line = line.toUpperCase();
         boolean isArabic = match(line, "^\\d{1,2}[\\s-+/*]\\d{1,2}$");
         boolean isRoman = match(line, "^[VIX]{1,4}[\\s-+/*][VIX]{1,4}$");
@@ -15,7 +15,7 @@ public class Calculate {
         }
         String[] numbers = line.split("\\W");
         String operation =getOperation(line);
-        Integer result = 0;
+        var result = 0;
         if (isArabic) {
             if(Integer.parseInt(numbers[0]) < 11 && Integer.parseInt(numbers[1]) < 11){
                 result = calculate(Integer.parseInt(numbers[0]), Integer.parseInt(numbers[1]), operation);
@@ -44,7 +44,7 @@ public class Calculate {
         return matcher.find();
     }
 
-    private static Integer calculate(Integer operand1, Integer operand2, String operation) {
+    private static int calculate(Integer operand1, Integer operand2, String operation) {
         switch (operation) {
             case "+":
                 return operand1 + operand2;

@@ -7,7 +7,7 @@ public class Converter {
 
     public static String fromArabicToRoman(Integer value){
         var sb = new StringBuilder();
-        Integer times;
+        int times;
         var romans = new String[] { "I", "IV", "V", "IX", "X", "XL", "L",
                 "XC", "C", "CD", "D", "CM", "M" };
         var ints = new Integer[] { 1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500,
